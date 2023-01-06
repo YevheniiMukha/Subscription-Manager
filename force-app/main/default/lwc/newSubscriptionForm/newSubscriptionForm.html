@@ -1,0 +1,50 @@
+<template>
+    <template if:true={visibility}>
+        <lightning-record-edit-form
+                object-api-name={subscriptionObject}
+                onsubmit={handleSubmit}
+                onsuccess={handleSubscriptionCreated}>
+            <lightning-messages></lightning-messages>
+            <div class="form-main-container">
+                <div class="form-container">
+                    <lightning-input
+                            type="color"
+                            label="Color"
+                            value={colorField}
+                            onchange={handleColorChange}
+                            variant="label-hidden">
+                    </lightning-input>
+                    <lightning-input-field
+                            field-name={nameField}
+                            variant="label-hidden">
+                    </lightning-input-field>
+                    <lightning-input-field
+                            field-name={paymentDayField}
+                            variant="label-hidden">
+                    </lightning-input-field>
+                    <lightning-input-field
+                            field-name={priceField}
+                            variant="label-hidden">
+                    </lightning-input-field>
+                    <lightning-button-icon
+                            icon-name="utility:check"
+                            variant="bare"
+                            type="submit"
+                            alternative-text="Save"
+                            class="slds-m-left_xx-small"
+                            title="Save">
+                    </lightning-button-icon>
+                    <lightning-button-icon
+                            icon-name="utility:close"
+                            variant="bare"
+                            type="button"
+                            alternative-text="Delete"
+                            class="slds-m-left_xx-small"
+                            title="Delete"
+                            onclick={handleClose}>
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </lightning-record-edit-form>
+    </template>
+</template>
