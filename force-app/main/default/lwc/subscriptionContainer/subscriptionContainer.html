@@ -1,0 +1,21 @@
+<template>
+    <div class='main-container'>
+        <div class='sub-container'>
+            <h1 style='font-size: 22px;'> Subscriptions: </h1>
+            <lightning-button
+                    variant="destructive-text"
+                    label="add"
+                    title="add"
+                    onclick={handleAdd}
+                    icon-name="utility:add"
+                    class="slds-p-around_xxx-small">
+            </lightning-button>
+        </div>
+        <div class='sub-container-form'>
+            <c-new-subscription-form
+                    onclose={handleClose}
+                    visibility={formVisibility}>
+            </c-new-subscription-form>
+        </div>
+    </div>
+</template>
